@@ -1,9 +1,3 @@
-# ==========================================
-# Projeto: Gestor de Tarefas
-# Linguagem: Python
-# Objetivo: Trabalho de Grupo com Git
-# ==========================================
-
 tarefas = []
 
 
