@@ -9,7 +9,7 @@ tarefas = []
 
 def mostrar_menu():
     print("\n" + "=" * 35)
-    print("     GESTOR DE TAREFAS - GRUPO 1")
+    print("   GESTOR DE TAREFAS v2.0 - GRUPO 1")
     print("=" * 35)
     print("1. Adicionar tarefa")
     print("2. Listar tarefas")
