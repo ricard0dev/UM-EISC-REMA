@@ -1,9 +1,3 @@
-# ==========================================
-# Projeto: Gestor de Tarefas
-# Linguagem: Python
-# Objetivo: Trabalho de Grupo com Git
-# ==========================================
-
 tarefas = []
 
 
@@ -16,6 +10,7 @@ def mostrar_menu():
     print("3. Concluir tarefa")
     print("4. Eliminar tarefa")
     print("5. Mostrar estatisticas")
+    print("6. Adicionar prioridade a uma tarefa")
     print("0. Sair")
     print("=" * 35)
 
@@ -99,6 +94,28 @@ def mostrar_estatisticas():
     print(f"Tarefas concluidas: {concluidas}")
     print(f"Tarefas pendentes: {pendentes}")
 
+def adicionar_prioridade():
+    listar_tarefas()
+
+    if not tarefas:
+        return
+
+    try:
+        numero = int(input("Numero da tarefa para definir prioridade: "))
+
+        if 1 <= numero <= len(tarefas):
+            prioridade = input("Defina a prioridade (Alta, Media, Baixa): ").strip()
+            if prioridade:
+                tarefas[numero - 1]["prioridade"] = prioridade
+                print("Prioridade adicionada com sucesso!")
+            else:
+                print("A prioridade nao pode estar vazia.")
+        else:
+            print("Numero de tarefa invalido.")
+
+    except ValueError:
+        print("Por favor, introduza um numero valido.")    
+
 
 def main():
     print("Bem-vindo ao Gestor de Tarefas!")
@@ -121,6 +138,9 @@ def main():
 
         elif opcao == "5":
             mostrar_estatisticas()
+
+        elif opcao == "6":
+            adicionar_prioridade()
 
         elif opcao == "0":
             print("Obrigado por utilizar o programa!")
